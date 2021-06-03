@@ -1,3 +1,11 @@
+Eu precisava de um serviço para armazenar na nuvem áudios gravados pelo celular. Algo semelhante a uma conversa de Whatsapp. No entanto, eu gostaria de liberar o acesso para qualquer pessoa de forma que todos os áudios ficassem disponíveis. Ao entrar em um grupo do WhatsApp, por exemplo, a pessoa só tem acesso ao conteúdo postado daquele momento em diante.
+
+O sistema é bastante simples e sequer exige login, pois não é usado para muitas pessoas.
+
+O projeto utiliza React com Firebase no backend. Para sua utilização é necessário instalar a biblioteca dotenv (npm install dotenv) e armazenar os dados de conexão no arquivo .env.
+
+Os áudios são exibidos de forma cronológica, começando pelo mais antigo. Neste momento não é possível ordenar de outra forma. A pessoa pode enviar arquivos de áudio já gravados ou utilizar algum aplicativo de gravação no celular direto no formulário. Um título é obrigatório e a data de postagem é registrada automaticamente.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
