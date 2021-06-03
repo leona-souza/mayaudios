@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+aside {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #ddd, -2px -2px 5px #ddd;
+  width: 350px;
+  margin: 10px;
+  padding: 10px;
+}
+
+footer {
+  
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titulo {
+  font-weight: 100;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 0px;
+  background-color: white !important;
+}
+
+.inputTitulo {
+  width: 350px;
+}
+
+input {
+  margin: 5px;
+  padding: 5px;
+}
+
+.inputArquivo {
+  width: 350px;
+  border: 1px solid #444
+}
+
+button {
+  width: 200px;
+  height: 40px;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(138, 31, 170);
+  color: white;
+}
+
+.player {
+  width: 100%;
+}
+
+.tituloArquivo {
+  font-size: 20px;
+  font-weight: 440;
+}
+
+.data {
+  font-size: 14px;
+  font-weight: 200;
+  font-style: italic;
+}
