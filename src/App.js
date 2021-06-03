@@ -7,23 +7,33 @@ import { NovoArquivo } from './NovoArquivo';
 const db = app.firestore();
 
 function App() {
+  const qtdCarregar = 3;
   const [arquivos, setArquivos] = useState([]);
   const [ordem, setOrdem] = useState('asc');
+  const [exibidos, setExibidos] = useState(qtdCarregar);
+  
 
   const changeOrder = () => {
     let novaOrdem = ordem === 'asc' ? 'desc' : 'asc';
     setOrdem(novaOrdem);
   }
 
+  const handleScroll = () => {
+    setExibidos(exibidos => exibidos + qtdCarregar);
+  }
+
   useEffect(() => {
-    db.collection('arquivos').orderBy('timestamp', ordem).onSnapshot(snapshot => {
-      const tempArquivos = [];
-      snapshot.forEach(snap => {
-        tempArquivos.push(snap.data());
-      })
-      setArquivos(tempArquivos);
+    db.collection('arquivos')
+      .orderBy('timestamp', ordem)
+      .limit(exibidos)
+      .onSnapshot(snapshot => {
+        const tempArquivos = [];
+        snapshot.forEach(snap => {
+          tempArquivos.push(snap.data());
+        });
+        setArquivos(tempArquivos);
     })
-  }, [ordem])
+  }, [ordem, exibidos])
 
   return (
     <div>
@@ -53,10 +63,12 @@ function App() {
             </aside>
           ))
         }
+      <button onClick={handleScroll}>Carregar mais</button>
       </section>
       <div className='footer'>
         <NovoArquivo />
       </div>
+      {console.log(exibidos)}
     </div>
   );
 }
