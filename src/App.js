@@ -70,7 +70,7 @@ function App() {
                       <source src={arquivo.audio[0].url} />
                     </audio>                 
                 }
-                <div className='data'>{console.log(permissao)}
+                <div className='data'>
                   {arquivo.timestamp?.toDate().toDateString()} - {arquivo.timestamp?.toDate().toLocaleTimeString('en-US')}
                 </div>
               </aside>
