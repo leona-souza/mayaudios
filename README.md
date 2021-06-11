@@ -4,7 +4,9 @@ O sistema é bastante simples e sequer exige login, pois não é usado para muit
 
 O projeto utiliza React com Firebase no backend. Para sua utilização é necessário instalar a biblioteca dotenv (npm install dotenv) e armazenar os dados de conexão no arquivo .env.
 
-Os áudios são exibidos de forma cronológica, começando pelo mais antigo. Neste momento não é possível ordenar de outra forma. A pessoa pode enviar arquivos de áudio já gravados ou utilizar algum aplicativo de gravação no celular direto no formulário. Um título é obrigatório e a data de postagem é registrada automaticamente.
+Os áudios são exibidos de forma cronológica, começando pelo mais antigo. ~~Neste momento não é possível ordenar de outra forma~~. A pessoa pode enviar arquivos de áudio já gravados ou utilizar algum aplicativo de gravação no celular direto no formulário. Um título é obrigatório e a data de postagem é registrada automaticamente.
+
+**UPDATE**: agora também é possível enviar imagens e é possível inverter a ordem dos elementos. Também acrescentei lazy loading.
 
 # Getting Started with Create React App
 
