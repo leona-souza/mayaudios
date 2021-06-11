@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { app } from './base';
 import './App.css';
 import { NovoArquivo } from './NovoArquivo';
-//import ReactAudioPlayer from 'react-audio-player';
 
 const db = app.firestore();
 
@@ -12,10 +11,10 @@ function App() {
   const [ordem, setOrdem] = useState('asc');
   const [exibidos, setExibidos] = useState(qtdCarregar);
   
-
   const changeOrder = () => {
-    let novaOrdem = ordem === 'asc' ? 'desc' : 'asc';
-    setOrdem(novaOrdem);
+    setOrdem(ordem => ( 
+      ordem === 'asc' ? 'desc' : 'asc'
+    ));
   }
 
   const handleScroll = () => {
@@ -68,7 +67,6 @@ function App() {
       <div className='footer'>
         <NovoArquivo />
       </div>
-      {console.log(exibidos)}
     </div>
   );
 }
