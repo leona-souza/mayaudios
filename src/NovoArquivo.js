@@ -17,17 +17,20 @@ export const NovoArquivo = () => {
     if (!titulo || !file) {
       window.alert('Preencha todos os campos');
       return;
+    } else {
+      window.alert('O arquivo está sendo enviado, aguarde');
     }
     const storageRef = storage.ref();
     const fileRef = storageRef.child(file.name);
     await fileRef.put(file);
-    db.collection('arquivos').doc(titulo).set({ 
+    await db.collection('arquivos').doc(titulo).set({ 
       titulo,
       audio: firebase.firestore.FieldValue.arrayUnion({ url: await fileRef.getDownloadURL() }),
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
     })
     setTitulo('');
     setFile(null);
+    window.alert("Arquivo enviado");
   }
 
   return(
