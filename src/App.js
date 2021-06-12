@@ -13,7 +13,6 @@ function App() {
   const [exibidos, setExibidos] = useState(qtdCarregar);
   const [permissao, setPermissao] = useState(false);
   const hash = "beebd46a46734efbdb822405628bfe7c3e517057d3760edb308b9cf4bd968ab3";
-
   
   const changeOrder = () => {
     setOrdem(ordem => ( 
